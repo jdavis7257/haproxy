@@ -28,7 +28,7 @@ class Haproxy(object):
     envvar_ssl_bind_options = os.getenv("SSL_BIND_OPTIONS")
     envvar_stats_auth = os.getenv("STATS_AUTH", "stats:stats")
     envvar_stats_port = os.getenv("STATS_PORT", "1936")
-    envvar_timeout = os.getenv("TIMEOUT", "connect 5000, client 50000, server 50000").split(",")
+    envvar_timeout = os.getenv("TIMEOUT", "http-request 5s, connect 5000, client 50000, server 50000").split(",")
     envvar_health_check = os.getenv("HEALTH_CHECK", "check inter 2000 rise 2 fall 3")
     envvar_extra_global_settings = os.getenv("EXTRA_GLOBAL_SETTINGS")
     envvar_extra_default_settings = os.getenv("EXTRA_DEFAULT_SETTINGS")
